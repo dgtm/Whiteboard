@@ -1,0 +1,15 @@
+<%= semantic_form_for [@document,@version] do |f| %>
+  <%= f.inputs do%>
+      <%= f.input :content, :as => :text %>
+        <%= f.input :current, :as => :check_box %>
+  <% end %>
+  <%=f.buttons %>
+<%= f.semantic_errors :alert%>
+<% end %>
+
+
+<!-- <% form_tag(edit_document_version_path, :method => 'post') do |f| %>
+      <%= text_area_tag "content" %>
+        <%= check_box_tag "current" %>
+<%= submit_tag 'Edit'%>
+<% end %> -->
