@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+
 
 gem 'rails', '3.0.5'
 
@@ -18,7 +18,7 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
-  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+
   gem 'ffaker'
   gem 'cucumber-rails'
 end

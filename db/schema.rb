@@ -10,12 +10,20 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110412055814) do
+ActiveRecord::Schema.define(:version => 20110412234159) do
 
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.boolean  "shared"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statistics", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "document_id"
+    t.integer  "count"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,14 +1,60 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <title>Writeboard</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'jquery-1.5.1.min.js','jquery-ui-1.8.11.custom.min.js','application.js' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
-<%= yield %>
+<span id="top"></span>
+
+<div id="templatemo_wrapper">
+    <div id = "right_sidebar"><img src = "images/calendar_bg.gif"></div>
+        <div id = "user_preferences"></div><!-- Place the accordion here -->
+    <div id="templatmeo_header">
+        <div id="site_title">
+            <h1><a href="#">WhiteBoard</a></h1>
+        </div>
+        <div id="templatemo_menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#aboutus">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li class="last"><a href="#contactus">Contact</a></li>
+            </ul>
+        </div> <!-- end of templatemo_menu -->
+    </div> <!-- end of header -->
+    <div id="templatemo_main">
+
+        <div id="home" class="content_top"></div>
+        <div class="content_box">
+                
+                <%= notice %>
+                <%= alert %>
+                <%= yield %>
+                
+                <div class="image_wrapper image_fl"><img src="../images/calendar_bg.gif" alt="Image" /><span></span></div>
+          <div class="cleaner h30"></div>
+                <div class="col_w310 float_l"></div>
+
+
+            <div class="cleaner"></div>
+            <a href="#" class="gototop">Go To Top</a>
+        </div>
+</div>
+
+
+    <div id="templatemo_footer">
+
+        Copyright © 2048 <a href="#">Sprout Technologies</a> | <a href="http://www.iwebsitetemplate.com" target="_parent">Website Templates</a> by <a href="http://www.templatemo.com" target="_parent">Free CSS Templates</a>
+
+        <div class="cleaner"></div>
+    </div>
+
+</div> <!-- end of warpper -->
 
 </body>
 </html>

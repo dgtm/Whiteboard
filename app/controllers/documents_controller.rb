@@ -11,12 +11,16 @@ class DocumentsController < ActionController::Base
    end
 
    def create
-    version_at_create = FIRST_VERSION
+
     @document = Document.create(:title => params[:title], :user_id => current_user.id, :shared => params[:public])
      if @document.save
         @version = @document.versions.create(:content => params[:content], :user_id => current_user.id, :number => FIRST_VERSION)
           if @version.save
-              redirect_to documents_path, :notice => "Document Created with version #{FIRST_VERSION} "
+             @stats = Stats.create(:document_id => @document.id, :user_id => current_user.id, :count => 1)
+                if @stats.save
+                redirect_to documents_path, :notice => "Document Created with version #{FIRST_VERSION} "
+                else
+                render :action => "new", :alert => 'Document could not be created. Try again.'
           else
               render :action => "new", :alert => 'Document could not be created. Try again.'
           end
