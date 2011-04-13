@@ -1,3 +1,4 @@
 <%= @version.content %><br />
-<%= link_to @version.number, edit_document_version_path(@document,@version) %> |
-<%= time_ago_in_words(@version.updated_at) %>
+<%= link_to "Version #{@version.number}", edit_document_version_path(@document,@version) %> |
+<%= time_ago_in_words(@version.updated_at) %> | <%= link_to "Save as latest",revert_document_version_path(@document,@version)%>
+

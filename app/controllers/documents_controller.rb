@@ -1,9 +1,41 @@
 class DocumentsController < ActionController::Base
-
+  layout 'application'
   before_filter :authenticate_user!
+  before_filter :get_statistics
+
   FIRST_VERSION = 1
+  YES = '1'
+
+  def get_statistics
+    @recent_documents = Array.new
+      @favorite_documents = Array.new
+      all_documents = Statistics.where("user_id = ?", current_user.id)
+      @recent_stats = all_documents.order("updated_at DESC")
+        @recent_stats.each do |stat|
+          @recent_documents << Document.find(stat.document_id)
+        end
+      @favorite_stats = all_documents.order("count DESC")
+        @favorite_stats.each do |stat|
+          @favorite_documents << Document.find(stat.document_id)
+        end
+  end
+
   def index
-    @documents = Document.my_documents(current_user.id)
+    @my_documents = current_user.documents
+    @documents = Document.all
+  end
+
+  def search
+    @documents = Document.search(params[:options],params[:search],current_user.id)
+  end
+
+  def show
+    @document = Document.find(params[:id])
+    @versions = @document.versions
+    # respond_to do |format|
+    #       format.html { }
+    #       format.js { }
+    #     end
   end
 
   def new
@@ -12,7 +44,13 @@ class DocumentsController < ActionController::Base
 
    def create
 
-    @document = Document.create(:title => params[:title], :user_id => current_user.id, :shared => params[:public])
+    if params[:public] == YES
+      @shared_status = true
+    else
+      @shared_status = false
+    end
+
+    @document = Document.create(:title => params[:title], :user_id => current_user.id, :shared => @shared_status)
      if @document.save
         @version = @document.versions.create(:content => params[:content], :user_id => current_user.id, :number => FIRST_VERSION)
           if @version.save

@@ -1,4 +1,2 @@
-<% @versions.each do |version| %>
-  <%= link_to version.number, edit_document_version_path(@document,version) %><br />
-<% end %>
+<%= render 'show_document_versions' %>
 

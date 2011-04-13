@@ -5,7 +5,17 @@ Writeboard::Application.routes.draw do
   # first created -> highest priority.
 
 resources :documents do
-  resources :versions
+  collection do
+    post 'search'
+  end
+  resources :versions do
+    member do
+      get 'revert'
+    end
+    collection do
+      get 'order_by_recent'
+    end
+  end
 end
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

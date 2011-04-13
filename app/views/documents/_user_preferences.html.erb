@@ -1,0 +1,29 @@
+<h3>My Documents</h3>
+<div>
+<% @my_documents.each do |document| %>
+  <li><%= link_to document.title, document_path(document), :remote => true %></li>
+<% end %>
+</div>
+
+<h3>All Documents</h3>
+<div>
+<% @documents.each do |document| %>
+<ul>
+  <li><%= link_to document.title, document_path(document) %></li>
+</ul>
+<% end %>
+</div>
+
+<h1>Recent Documents</h1>
+<div>
+<% @recent_documents.each do |document| %>
+  <%= link_to document.title, document_path(document) %>
+<% end %>
+</div>
+
+<h1>My Favorite Documents</h1>
+<div>
+<% @favorite_documents.each do |document| %>
+   <%= link_to document.title, document_path(document) %>
+<% end %>
+</div>

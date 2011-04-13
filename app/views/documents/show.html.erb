@@ -1,0 +1,7 @@
+<%= @document.title %>
+<%= @document.shared_status %><br />
+<div id ="document_version_content"><%= @document.versions.last.content %></div>
+<%= render 'versions/show_document_versions' ,:collection => [@document,@versions] %>
+
+<div id = "order_by_options"><%= link_to "Order by recent",document_versions_path(@document, :order_recent => true ), :remote => true %> |
+<%= link_to "Order by version",document_versions_path(@document, :order_by_version => true ), :remote => true %></div>

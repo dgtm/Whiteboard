@@ -9,4 +9,5 @@ attr_accessor :login
 
   has_many :documents
   has_many :versions
+
 end

@@ -1,5 +1,3 @@
-<h1>WhList of documents</h1>
-<% @documents.each do |document| %>
-  <%= document.title %>
-<% end %>
+<%= render 'user_preferences', :locals => @documents %>
+<div id = "this"></div>
 <%= link_to "Create a Document", new_document_path %>
