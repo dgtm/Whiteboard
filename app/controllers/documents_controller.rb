@@ -16,11 +16,12 @@ class DocumentsController < ActionController::Base
      if @document.save
         @version = @document.versions.create(:content => params[:content], :user_id => current_user.id, :number => FIRST_VERSION)
           if @version.save
-             @stats = Stats.create(:document_id => @document.id, :user_id => current_user.id, :count => 1)
+             @stats = Statistics.create(:document_id => @document.id, :user_id => current_user.id, :count => 1)
                 if @stats.save
                 redirect_to documents_path, :notice => "Document Created with version #{FIRST_VERSION} "
                 else
                 render :action => "new", :alert => 'Document could not be created. Try again.'
+                end
           else
               render :action => "new", :alert => 'Document could not be created. Try again.'
           end

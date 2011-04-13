@@ -1,10 +1,10 @@
 <%= semantic_form_for [@document,@version] do |f| %>
   <%= f.inputs do%>
-      <%= f.input :content, :as => :text %>
-        <%= f.input :current, :as => :check_box %>
+      <div class = "version_form_text">Content:</div><%= f.input :content, :as => :text %>
+        <span class = "version_form_text">Do not reflect changes:</span><%= check_box_tag "dont_save_as_a_new_version" %>
   <% end %>
   <%=f.buttons %>
-<%= f.semantic_errors :alert%>
+<%= f.semantic_errors :alert %>
 <% end %>
 
 
