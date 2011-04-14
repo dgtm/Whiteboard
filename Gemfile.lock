@@ -43,6 +43,8 @@ GEM
     celerity (0.8.9)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
+    ckeditor (3.4.2.pre)
+      mime-types (>= 1.16)
     cucumber (0.10.2)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -142,6 +144,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  ckeditor (= 3.4.2.pre)
   cucumber-rails
   database_cleaner
   devise

@@ -9,7 +9,7 @@ gem 'sqlite3'
 gem 'devise'
 gem 'formtastic','~>1.2.0'
 gem 'jquery-rails'
-
+gem 'ckeditor', '3.4.2.pre'
 
 group :development do
     gem 'ffaker'

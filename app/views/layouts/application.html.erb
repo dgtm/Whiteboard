@@ -3,7 +3,7 @@
 <head>
   <title>Writeboard</title>
   <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag 'jquery', 'jquery-ui.min','rails', 'application' %>
+  <%= javascript_include_tag 'jquery', 'jquery-ui.min','rails', 'ckeditor/ckeditor','application' %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -52,9 +52,7 @@
                 <div class="col_w310 float_l">
 
                 </div>
-                <div id = "accordion">
-                  <%= render 'documents/user_preferences'%>
-                </div>
+
 
 
             <div class="cleaner"></div>
