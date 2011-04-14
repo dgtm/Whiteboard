@@ -1,9 +1,8 @@
+<div class ="document_placeholder">
 <%= form_tag( documents_path, :method=>'post') do %>
 Title:<%= text_field_tag "title" %><br />
-Details:
-
-  <%= ckeditor_textarea("document", "title", :width => '100%', :height => '300%') %>
-  <br />
+Details:<%= text_area_tag "content","","rows" => 30 %>  <br />
 Public? <%= check_box_tag "public" %>
 <%= submit_tag 'Create' %>
 <% end %>
+</div>

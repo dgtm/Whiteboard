@@ -1,7 +1,14 @@
 /*
 Credit: http://www.templatemo.com
 */
-
+@font-face{
+  font-family:myfont;
+  src: url(../fonts/myfont.TTF);
+}
+@font-face{
+  font-family:title;
+  src: url(../fonts/title.ttf);
+}
 body {
   margin: 0;
   padding: 0;
@@ -45,7 +52,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 .float_l { float: left }
 .float_r { float: right }
 
-.image_wrapper { position: relative; display: inline-block; width: 300px; height: 168px; margin: 3px 0 10px 0; }
+.image_wrapper { position: relative; display: inline-block; width: 300px; margin: 3px 0 10px 0; }
 .image_wrapper img { z-index: 1000; position: absolute; top: 0; left: 0; width: 300px; height: 150px; }
 .image_wrapper span {  position: absolute; border: 0; left: 0; width: 300px; height: 168px; background: url(../images/templatemo_image_bg.jpg) no-repeat }
 
@@ -60,25 +67,23 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 
 
 #templatemo_wrapper {
-  width: 1006px;
-  margin: 0px 30px;
-  padding-left: 6px;
-/*  background: url(images/templatemo_body.jpg) center top no-repeat; */
+  width: 1606px;
+  height:800px;
+  margin: 0px auto 0px 0px;
+  padding-left: 20px;
 }
 
 #templatmeo_header {
-  width: 800px;
-  height: 40px;
-  padding: 40px 0 40px 6px;
+  width: 1400px;
+  height: 20px;
+  padding: 20px 10px 10px 100px;
 }
 
-#site_title { float: left; }
-#site_title h1 { margin: 0; padding: 0 }
-#site_title h1 a { display: block; width: 160px; height: 60px; color: #000; font-size: 40px; font-weight: 400; outline: none; text-decoration:none}
+#site_title { width:300px; font-family:title;font-size:60px;font-weight:bold;}
+#site_title h1 a { display: block; width: 160px; color: #000; font-size: 40px; font-weight: 400; outline: none; text-decoration:none}
 
-#templatemo_menu { float: right; margin-top: 20px; }
+#templatemo_menu { float: right; border:solid;margin-left:10px; margin-bottom:10px;}
 #templatemo_menu ul { padding: 0; margin: 0; list-style: none; }
-#templatemo_menu ul li { margin: 0; padding: 0; display: inline-block }
 #templatemo_menu ul li a {
   float: left;
   display: block;
@@ -102,7 +107,8 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 }
 
 .content_top { clear: both; height: 10px }
-.content_box { position: relative; width: 1020px; margin-bottom: 30px; padding: 70px 70px 70px 76px; background: #fff; margin-left: 0px; }
+.content_box { width: 1400px; margin-bottom: 30px; margin-top:0px; padding: 5px 10px 70px 0px; background-color:#F5EDED;
+ margin-left: 0px; height:800px;}
 
 .content_title { position: absolute; width: 106px; height: 104px;
  top: -5px; left: -6px; }
@@ -113,7 +119,7 @@ h6 { font-size: 14px; margin: 0 0 5px; padding: 0; }
 .content_portfolio { background: url(images/templatemo_content_portfolio.png) no-repeat }
 .content_contactus { background: url(images/templatemo_content_contactus.png) no-repeat }
 
-a.gototop { display: block; position: absolute; width: 140px; height: 25px; padding: 65px 10px 0 0; text-align: right; font-size: 14px; bottom: 0; right: 0; color: #000; background: url(../images/templatemo_gototop.jpg) no-repeat; text-decoration: none; }
+a.gototop { margin-left:1270px;margin-top:730px;display: block; width: 140px; height: 25px; padding: 65px 0px 0 0; text-align: right; font-size: 14px; bottom: 0; right: 0; color: #000; background: url(../images/templatemo_gototop.jpg) no-repeat; text-decoration: none; }
 a.gototop:hover { text-decoration: underline }
 
 .col_w310 { width: 310px }
@@ -160,6 +166,10 @@ a.gototop:hover { text-decoration: underline }
   margin-left: 1150px;
   background:url(../images/calendar_bg.gif);
 }
+#search_box{
+  padding-bottom:10px;
+  margin-left:850px;
+}
 
 #left_sidebar {
   position:absolute;
@@ -174,5 +184,108 @@ a.gototop:hover { text-decoration: underline }
   margin-top:100px;
   margin-left:1100px;
 }
+#accordion{
+  overflow:hidden;
+  margin-top:0px;
+   z-index:+5;
+   float:right;
+   width:200px;
+}
+#versions{
+  margin-left:900px;
+}
+.document_placeholder{
+  float:left;
+  width:1190px;
+  overflow:hidden;
+  background-color:#F5EDED;
+  margin-left:3px;
+}
+#document_details_placeholder{
+  width:900px;
+  float:left;
+  overflow:hidden;
+}
+#document_author{
+  font-family:myfont;
+  font-size:40px;
+}
 
+#version_image_wrapper{
+  margin-top:5px;
+  overflow:hidden;
+  float:right;
+  background-color:#F0EBEB;
+  border-style:solid;
+  border-radius:5px;
+  overflow:auto;
+  max-height:450px;
+  width:270px;
+}
+#document_versions{
+  padding-left:10px;
+}
+#order_by_options{
+  text-align:center;
+  padding:5px;
+}
+#search_text{
+  text-align:left;
+  font-size:22px;
+  font-weight:bold;
+  font-decoration:small-caps;
+  padding:8px;
+}
+#version_content {
+    border: 2px solid #006;
+    background: #ffc;
+    border-radius: 15px;
 
+}
+#version_submit{
+      border: 1px solid #006;
+      background: #9cf;
+      border-width:0px;
+      font-size:30px;
+      border-radius: 15px;
+
+}
+form li{
+  list-style:none;
+}
+#update_button{
+  float:right;
+}
+#version_form_text{
+  font-size:20px;
+  text-decoration:small-caps;
+margin-left:400px;
+margin-top:20px;
+color:#BAB8B8;
+}
+
+.document_images{
+  width:250px;
+  height:200px;
+}
+#header3{
+  font-size:18px;
+  text-align:center;
+  font-variant:small-caps;
+}
+#accordion_content{
+font-size:16px;
+color:blue;
+}
+#document_title{
+  padding-top:10px;
+  padding-left:5px;
+  float:left;
+  font-size:20px;
+  display:block;
+}
+#document_status{
+  font-size:15px;
+  padding-left:15px;
+
+}

@@ -62,6 +62,7 @@ YES = '1'
    def edit
      @document = Document.find(params[:document_id])
      @version = @document.versions.find(params[:id])
+     @author = @document.user.username
      respond_to do |format|
        format.html { }
        format.js

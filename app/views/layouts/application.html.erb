@@ -12,16 +12,22 @@
 
 <div id="templatemo_wrapper">
     <!-- <div id = "right_sidebar"><img src = "images/calendar_bg.gif"></div> -->
-        <div id = "user_preferences"></div><!-- Place the accordion here -->
     <div id="templatmeo_header">
         <div id="site_title">
             <h1><a href="#">WhiteBoard</a></h1>
         </div>
+
+        <div id='search_box'>
+          <span id = "search_text">Quick Find</span>
+          <%= form_tag search_documents_path, :method => 'post' do %>
+          <%= select_tag(:options, options_for_select([['All','all'],['My Documents','my_docs']]))%>
+            <%= text_field_tag :search %>
+            <%= submit_tag "Search" %>
+          <% end %>
+        </div>
+
         <div id="templatemo_menu">
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#aboutus">About</a></li>
-                <li><a href="#services">Services</a></li>
                 <li><% if user_signed_in? %>
                       <%= link_to "Sign Out", destroy_user_session_path%>
                     <% else %>
@@ -30,6 +36,9 @@
                 </li>
             </ul>
         </div> <!-- end of templatemo_menu -->
+
+
+
     </div> <!-- end of header -->
     <div id="templatemo_main">
         <div id="home" class="content_top"></div>
@@ -39,19 +48,14 @@
                 <div id="alert"> <%= alert %></div>
                 <%= yield %>
 
-                <!-- <div class="image_wrapper image_fl"><img src="../images/calendar_bg.gif" alt="Image" /><span></span></div> -->
-          <div class="cleaner h30">
-            <div id='search_box'>
-              <%= form_tag search_documents_path, :method => 'post' do %>
-              <%= select_tag(:options, options_for_select([['All','all'],['My Documents','my_docs']]))%>
-                <%= text_field_tag :search %>
-                <%= submit_tag "Search" %>
-              <% end %>
-            </div>
+
+          <div id = "accordion">
+              <%= render 'documents/user_preferences' %>
           </div>
                 <div class="col_w310 float_l">
 
                 </div>
+
 
 
 

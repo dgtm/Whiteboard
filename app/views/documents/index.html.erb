@@ -1,4 +1,12 @@
-<div id = "accordion">
-    <%= render 'user_preferences' %>
+<div class = "document_placeholder">
+  <%= link_to "Create a Document", new_document_path %>
+
+  <%= image_tag "update.png", :class => "document_images", :id=>"update"%>
+  Edit without worries
+  <%= image_tag "time_clock.jpg", :class => "document_images", :id => "clock"%>
+  Keep track of your files
+  <%= image_tag "collaborate.jpg", :class => "document_images", :id => "collaborate"%>
+  Collaborate with your colleagues
+
 </div>
-<%= link_to "Create a Document", new_document_path %>
+

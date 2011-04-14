@@ -1,8 +1,6 @@
-<div id = "document_versions">
 <% @versions.each do |version| %>
   <%= link_to "Version #{version.number}", edit_document_version_path(@document,version), :remote => true %> |
   <%= time_ago_in_words(version.updated_at) +" ago" %> |
-  <%= link_to "Revert",revert_document_version_path(@document,version)%>
+  <%= link_to "Revert",revert_document_version_path(@document,version), :remote => true %>
   <br />
 <% end %>
-</div>

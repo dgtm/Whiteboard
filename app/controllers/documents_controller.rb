@@ -21,8 +21,6 @@ class DocumentsController < ActionController::Base
   end
 
   def index
-    @my_documents = current_user.documents
-    @documents = Document.all
   end
 
   def search
@@ -32,10 +30,10 @@ class DocumentsController < ActionController::Base
   def show
     @document = Document.find(params[:id])
     @versions = @document.versions
-    # respond_to do |format|
-    #       format.html { }
-    #       format.js { }
-    #     end
+     respond_to do |format|
+           format.html { }
+          format.js { }
+         end
   end
 
   def new

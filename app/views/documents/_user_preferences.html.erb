@@ -1,29 +1,29 @@
-<h3>My Documents</h3>
+<h3 id ="header3">My Documents</h3>
 <div>
-<% @my_documents.each do |document| %>
+<% my_docs.each do |document| %>
   <li><%= link_to document.title, document_path(document), :remote => true %></li>
 <% end %>
 </div>
 
-<h3>All Documents</h3>
-<div>
-<% @documents.each do |document| %>
-<ul>
-  <li><%= link_to document.title, document_path(document) %></li>
-</ul>
+<h3 id ="header3">All Documents</h3>
+<div id = "accordion_content">
+<% all_docs.each do |document| %>
+
+  <li><%= link_to document.title, document_path(document), :remote => true %></li>
+
 <% end %>
 </div>
 
-<h1>Recent Documents</h1>
+<h3 id ="header3">Recent Documents</h1>
 <div>
-<% @recent_documents.each do |document| %>
-  <%= link_to document.title, document_path(document) %>
+<% recent_docs.each do |document| %>
+  <%= link_to document.title, document_path(document), :remote => true %>
 <% end %>
 </div>
 
-<h1>My Favorite Documents</h1>
+<h3 id ="header3">My Favorite Documents</h1>
 <div>
-<% @favorite_documents.each do |document| %>
-   <%= link_to document.title, document_path(document) %>
+<% favorite_docs.each do |document| %>
+   <%= link_to document.title, document_path(document), :remote => true %>
 <% end %>
 </div>

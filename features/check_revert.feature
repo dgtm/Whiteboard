@@ -17,5 +17,7 @@ Scenario: Check revert functionality plus the content of the created version
   And I am on the documents page
   And I follow "Random"
   And I follow "Revert"
+  And I sleep for 5 seconds
+
   Then I should see "Version 2"
   And the content of this version should be the same as the one reverted from
