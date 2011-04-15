@@ -1,0 +1,15 @@
+#search_results_header
+  Your search returned the following results:
+-@documents.each do |document|
+  .search_results_body
+    =link_to document.title, document_path(document), :remote => true
+    by
+    =document.user.username
+    |
+    Created:
+    =time_ago_in_words(document.created_at)
+    ago
+    |
+    Edited
+    = document.hit_counter(current_user.id)
+    times

@@ -1,0 +1,13 @@
+.document_placeholder
+  =form_tag( documents_path, :method=>'post') do
+    .documents_form_text Title:
+    =text_field_tag("title","",:size => 70)
+    .documents_form_text#public_form_text
+      Public?
+      =check_box_tag "public"
+    .create_button
+      =submit_tag 'Create', :id => "create_a_doc"
+    .documents_form_text Details:
+    =text_area_tag "content","","rows" => 30,"cols" => 100
+    .create_button
+      =submit_tag 'Create', :id => "create_a_doc"

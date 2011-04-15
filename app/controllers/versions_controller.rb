@@ -46,7 +46,7 @@ YES = '1'
       elsif params[:order_by_version]
         @versions = @document.versions.order("number DESC")
       else
-        @versions = @document.versions.all
+        @versions = @document.versions.order("number DESC")
       end
       respond_to do |format|
         format.html { }

@@ -8,10 +8,11 @@ class Document < ActiveRecord::Base
 
   VERSION_INCREMENT = 1
 
+  def hit_counter(current_user_id)
+    Statistics.where(:document_id => self.id, :user_id => current_user_id).first.count
+  end
+
   def self.search(option, parameters,current_user_id)
-    p "aaaaaaaaaaaaaaaaaa"
-    p option
-    p parameters
   if option == "my_docs"
     if parameters
       find(:all, :conditions => ['title LIKE ? AND user_id LIKE ?', "%#{parameters}%",current_user_id])
@@ -35,15 +36,13 @@ class Document < ActiveRecord::Base
     self.versions.maximum(:number) + 1
   end
 
-  def shared_status
-    if self.shared == true
-      share_status = "Public"
+  def shared_status(current_user_id)
+    if self.shared == false && self.user_id != current_user_id
+      share_status = "Not Editable"
     else
-      share_status = "Private"
+      share_status = "Editable"
     end
     return share_status
-    p "Inside the modellllllllllllllllllllllllllllll"
-    p share_status
   end
 
 end

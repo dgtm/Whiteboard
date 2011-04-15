@@ -1,4 +1,5 @@
 class UsersController < ActionController::Base
+  layout 'authenticate'
   protected
 
    def self.find_for_database_authentication(warden_conditions)

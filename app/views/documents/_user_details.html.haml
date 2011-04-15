@@ -1,0 +1,28 @@
+%h2
+  =current_user.username
+%h3 My Documents
+.accordion_content
+  -my_docs.each do |document|
+    %li
+      =link_to document.title, document_path(document), :remote => true
+
+%h3 All Documents
+.accordion_content
+  -all_docs.each do |document|
+    %li
+      =link_to document.title, document_path(document), :remote => true
+
+%h3 Recent Documents
+.accordion_content
+  -recent_docs.each do |document|
+    %li
+      =link_to document.title, document_path(document), :remote => true
+
+%h3 My Favorite Documents
+.accordion_content
+  -favorite_docs.each do |document|
+    %li
+      =link_to document.title, document_path(document), :remote => true
+      |
+      =document.hit_counter(current_user.id)
+      edits

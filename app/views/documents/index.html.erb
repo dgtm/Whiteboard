@@ -1,12 +1,22 @@
 <div class = "document_placeholder">
-  <%= link_to "Create a Document", new_document_path %>
+<div id ="index_image_wrapper">
+  <div id ="time">
+    <%= image_tag "clock.png", :class => "document_images", :id => "clock"%>
+    <%= link_to "My Profile", :render => 'user_preferences', :remote => true %> |
 
-  <%= image_tag "update.png", :class => "document_images", :id=>"update"%>
-  Edit without worries
-  <%= image_tag "time_clock.jpg", :class => "document_images", :id => "clock"%>
-  Keep track of your files
-  <%= image_tag "collaborate.jpg", :class => "document_images", :id => "collaborate"%>
-  Collaborate with your colleagues
-
+    <div class ="index_text">
+      Keep track of your files
+    </div>
+  </div>
+  <div id ="collab">
+  <%= image_tag "collaborate.png", :class => "document_images", :id => "collaborate"%>
+  <div class ="index_text">
+    Collaborate with your friends
+  </div>
+  </div>
+  <div id ="start">
+    <%= link_to image_tag("get-started-now-button.png", :class => "document_images", :id=>"get_started"), new_document_path %>
+  </div>
+</div>
 </div>
 

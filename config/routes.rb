@@ -7,6 +7,7 @@ Writeboard::Application.routes.draw do
 resources :documents do
   collection do
     post 'search'
+    get 'user_details'
   end
   resources :versions do
     member do

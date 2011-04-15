@@ -6,7 +6,7 @@ Feature: Check that a private document can not be edited
 Scenario: Check for a private document
   Given I am authenticated as "jack"
   And I am on the documents page
-    And I follow "Create a Document"
+    And I follow "get_started"
     And I fill in "title" with "A History in future"
     And I fill in "content" with "Future"
     And I press "Create"

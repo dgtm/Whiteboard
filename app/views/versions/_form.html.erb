@@ -1,7 +1,8 @@
 
 <%= semantic_remote_form_for [@document,@version] do |f| %>
-<span id = "version_form_text">Do not reflect these changes in the latest version</span><%= check_box_tag "dont_save_as_a_new_version" %>
+<span id = "version_form_text">Do not reflect these changes in the latest version<%= check_box_tag "dont_save_as_a_new_version" %></span>
 <div id = "update_button"><%= f.commit_button :button_html => { :value => "Update", :size => 40 } %></div>
-<div id ="textarea"><%= f.input :content, :as => :text, :input_html => { :rows => 30, :cols => 125 }, :label =>false %></div>
+<div id ="textarea"><%= f.input :content, :as => :text, :input_html => { :rows => 40, :cols => 140 }, :label =>false %></div>
+<div id = "update_button"><%= f.commit_button :button_html => { :value => "Update", :size => 40 } %></div>
 <%= f.semantic_errors :alert %>
 <% end %>

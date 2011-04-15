@@ -1,0 +1,19 @@
+#document_details_placeholder
+  #document_title
+    =@document.title
+  #document_status
+    This document is
+    =@document.shared_status(current_user.id)
+  #document_author
+    by
+    =@document.user.username
+  #document_version_content
+    =@document.versions.last.content
+
+#version_image_wrapper
+  #order_by_options
+    =link_to "Order by recent",document_versions_path(@document, :order_recent => true ), :remote => true
+    |
+    =link_to "Order by version",document_versions_path(@document, :order_by_version => true ), :remote => true
+  #document_versions
+    =render 'versions/show_document_versions' ,:collection => [@document,@versions]

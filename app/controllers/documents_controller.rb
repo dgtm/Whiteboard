@@ -32,10 +32,15 @@ class DocumentsController < ActionController::Base
     @versions = @document.versions
      respond_to do |format|
            format.html { }
-          format.js { }
-         end
+           format.js { }
+      end
   end
-
+  def user_details
+    respond_to do |format|
+          format.html { }
+          format.js { }
+     end
+  end
   def new
      @document = Document.new
    end
@@ -61,7 +66,6 @@ class DocumentsController < ActionController::Base
           else
               render :action => "new", :alert => 'Document could not be created. Try again.'
           end
-       # redirect_to :controller => :versions , :action => :create, :document_id => @document.id, :content => content, :method => :post
      else
        render :action => "new", :alert => 'Document could not be created. Try again.'
      end

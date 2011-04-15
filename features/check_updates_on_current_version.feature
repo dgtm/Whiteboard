@@ -10,7 +10,7 @@ Scenario: Check contents on update of a version if the document is not saved as 
 
 ##
   And I am on the documents page
-  And I follow "Create a Document"
+  And I follow "get_started"
   And I fill in "title" with "Random"
   And I fill in "content" with "Hello"
   And I press "Create"

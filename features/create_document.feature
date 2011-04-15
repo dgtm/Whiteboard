@@ -6,7 +6,7 @@ Feature: create a new Document and an automatic new version
 Scenario: Check document creation plus creation of first version
   Given I am authenticated
   And I am on the documents page
-    And I follow "Create a Document"
+    And I follow "get_started"
     And I fill in "title" with "A History in future"
     And I fill in "content" with "Future"
     And I press "Create"
